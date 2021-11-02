@@ -1,20 +1,21 @@
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
-
+import random
 
 def create_cents(k: int):
     # return np.loadtxt('cents1.txt').round(4)
-    cents_dict = {
-        2: [[0, 0, 0], [1, 1, 1]],
-        4: [[0,0,0], [1,1,1], [0,1,0.5], [1,0,0.5]],
-        8: [[0,0,0],[0,0,1],[0,1,0],[0,1,1],[1,0,0],[1,0,1],[1,1,0],[1,1,1]],
-        16: [[0,0,0],[0,0,1],[0,1,0],[0,1,1],[1,0,0],[1,0,1],[1,1,0],[1,1,1],
-            [0,0,0.3333],[0,1,0.3333],[1,0,0.3333],[1,1,0.3333],
-            [1,0,0.6667],[0,1,0.6667],[1,1,0.6667],[0,0,0.6667]]
-    }
-
-    return np.array(cents_dict[k])
+    if k in [2,4,8,16]:
+        cents_dict = {
+            2: [[0, 0, 0], [1, 1, 1]],
+            4: [[0,0,0], [1,1,1], [0,1,0.5], [1,0,0.5]],
+            8: [[0,0,0],[0,0,1],[0,1,0],[0,1,1],[1,0,0],[1,0,1],[1,1,0],[1,1,1]],
+            16: [[0,0,0],[0,0,1],[0,1,0],[0,1,1],[1,0,0],[1,0,1],[1,1,0],[1,1,1],
+                [0,0,0.3333],[0,1,0.3333],[1,0,0.3333],[1,1,0.3333],
+                [1,0,0.6667],[0,1,0.6667],[1,1,0.6667],[0,0,0.6667]]
+        }
+        return np.array(cents_dict[k])
+    return [[random.random() for _ in range(3)] for _ in range(k)]
 
 
 def distance(a, b):
@@ -25,7 +26,7 @@ def distance(a, b):
 def kmeans_per_iters(points, k: int, init_centroids):
     res = dict()
     prev_centroids = None
-    centroids = init_centroids.copy()
+    centroids = np.array(init_centroids).copy()
     iters = 0
     # while not converged or 20 iterations
     while iters < 20 and not np.array_equal(centroids, prev_centroids):
