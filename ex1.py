@@ -1,7 +1,7 @@
 import sys, numpy as np, matplotlib.pyplot as plt
 
 def distance(a, b):
-    return np.sum((a-b) ** 2)# we don't need square root because it's a monotonic function
+    return np.sum((a-b) ** 2) # we don't need square root because it's a monotonic function
 
 def kmeans(points, k: int, init_centroids, log_file: str):
     with open(log_file, 'w') as log:
@@ -27,8 +27,6 @@ def kmeans(points, k: int, init_centroids, log_file: str):
             
             print(f"[iter {iters}]:{','.join([str(i) for i in centroids])}", file=log)
             iters += 1
-        # if iters < 20:
-        #     print(f"[iter {iters}]:{','.join([str(i) for i in centroids])}", file=log)
         
         return centroids, clusters
 
@@ -48,6 +46,3 @@ if __name__ == '__main__':
     pixels = pixels.reshape(-1, 3)
 
     kmeans(pixels, k, init_centroids, out_fname)
-
-    # pixels = np.loadtxt('pixels')
-    # kmeans(pixels, k, init_centroids, out_fname)

@@ -324,7 +324,7 @@ a_{1}\leq a'_{1}\leq a'_{2}\leq a_{2},b_{1}\leq b'_{1}\leq b'_{2}\leq b_{2}
 נשים לב שמתקיים 
 \begin_inset Formula 
 \[
-\underset{S\sim\mathcal{D}}{\mathbb{E}}\left[L_{S}\left(h\right)\right]=\underset{S\sim\mathcal{D}}{\mathbb{E}}\left[\frac{1}{m}\stackrel[i=1]{m}{\sum}1_{\left[h\left(x_{i}\right)=f\left(x_{i}\right)\right]}\right]=\frac{1}{m}\stackrel[i=1]{m}{\sum}\underset{S\sim\mathcal{D}}{\mathbb{E}}\left[1_{\left[h\left(x\right)=f\left(x\right)\right]}\right]
+\mathbb{E}\left[L_{S}\left(h\right)\right]=\mathbb{E}\left[\frac{1}{m}\stackrel[i=1]{m}{\sum}1_{\left[h\left(x_{i}\right)=f\left(x_{i}\right)\right]}\right]=\frac{1}{m}\stackrel[i=1]{m}{\sum}\mathbb{E}\left[1_{\left[h\left(x\right)=f\left(x\right)\right]}\right]
 \]
 
 \end_inset
@@ -338,23 +338,15 @@ a_{1}\leq a'_{1}\leq a'_{2}\leq a_{2},b_{1}\leq b'_{1}\leq b'_{2}\leq b_{2}
 \begin_inset Formula $\mathcal{D}$
 \end_inset
 
-, ולכן מתקיים 
-\begin_inset Formula $\underset{S\sim\mathcal{D}}{\mathbb{E}}\left[1_{\left[h\left(x\right)=f\left(x\right)\right]}\right]=\underset{x\sim\mathcal{D}}{\mathbb{P}}\left[h\left(x\right)=f\left(x\right)\right]$
-\end_inset
-
-, ןלכן
+, ולכן מתקיים
 \begin_inset Formula 
 \[
-\underset{S\sim\mathcal{D}}{\mathbb{E}}\left[L_{S}\left(h\right)\right]=\frac{1}{m}\stackrel[i=1]{m}{\sum}\underset{x\sim\mathcal{D}}{\mathbb{P}}\left[h\left(x\right)=f\left(x\right)\right]=\underset{x\sim\mathcal{D}}{\mathbb{P}}\left[h\left(x\right)=f\left(x\right)\right]=L_{\mathcal{D}}\left(h\right)
+=\frac{1}{m}\stackrel[i=1]{m}{\sum}\underset{x\sim\mathcal{D}}{\mathbb{P}}\left[h\left(x\right)=f\left(x\right)\right]=\underset{x\sim\mathcal{D}}{\mathbb{P}}\left[h\left(x\right)=f\left(x\right)\right]=L_{\mathcal{D}}\left(h\right)
 \]
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-כנדרש.
 \end_layout
 
 \end_body
